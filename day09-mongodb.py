@@ -35,15 +35,15 @@ cursor = collection.find() #此處須注意，其回傳的並不是資料本身�
 # # collection.delete_many({'<column_name>': '<what_you_want>'})
 
 # # 插入一筆資料: 請放入一個dict
-# player_dict = {
-#     "product" : 'test02',
-#     "date" : '2019-01-11',
-#     "player_name" : 'Ann',
-#     "bet_0" : {
-#         'nunmber': '5566'
-#     },
-# }
-# x = collection.insert_one(player_dict)
-# print(x)
-# # 插入多筆資料: 請放入一個dist
-# # collection.insert_many(player_dict)
+player_dict = {
+    "product" : 'test04',
+    "date" : '2019-01-13',
+    "player_name" : 'Hoo',
+    "bet_0" : {
+        'nunmber': '7788'
+    },
+}
+x = collection.insert_one(player_dict)
+print(x)
+# 插入多筆資料: 請放入一個dist
+# collection.insert_many(player_dict)
