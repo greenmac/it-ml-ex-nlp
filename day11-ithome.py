@@ -110,7 +110,14 @@ df = df.apply(ArticleContentCrawler, axis=1)
 
 ## 存進MongoDB
 from pymongo import MongoClient
-conn = MongoClient("mongodb://greenmac16:mac50787@ds151141.mlab.com:51141/nlp") # 如果你只想連本機端的server你可以忽略，遠端的url填入: mongodb://<user_name>:<user_password>@ds<xxxxxx>.mlab.com:<xxxxx>/<database_name>，請務必既的把腳括號的內容代換成自己的資料。
+##線上mongodb,目前多筆塞不進去
+# conn = MongoClient("mongodb://greenmac16:mac50787@ds151141.mlab.com:51141/nlp") # 如果你只想連本機端的server你可以忽略，遠端的url填入: mongodb://<user_name>:<user_password>@ds<xxxxxx>.mlab.com:<xxxxx>/<database_name>，請務必既的把腳括號的內容代換成自己的資料。
+# db = conn.ithome_ironman
+# collection = db.articles
+# cursor = collection.insert_many(list(df.T.to_dict().values()))  # 這是DataFrame塞進Mongo的常見寫法
+
+##本機mongodb
+conn = MongoClient()
 db = conn.ithome_ironman
 collection = db.articles
 cursor = collection.insert_many(list(df.T.to_dict().values()))  # 這是DataFrame塞進Mongo的常見寫法
